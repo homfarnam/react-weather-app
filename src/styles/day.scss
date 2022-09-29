@@ -1,0 +1,17 @@
+.day {
+  @apply w-full h-auto flex items-center justify-center border m-5 p-3 text-white rounded-xl;
+
+  &__data {
+    @apply w-full flex flex-col space-y-2;
+    &--title {
+      @apply text-left text-xl font-bold underline text-indigo-400;
+    }
+  }
+
+  &:hover {
+    border-color: rgb(247, 84, 84);
+    transition: all 0.3s ease-in-out;
+
+    @apply shadow-xl bg-[#183551];
+  }
+}

@@ -1,0 +1,29 @@
+.header {
+  @apply text-white my-10 w-full;
+
+  &--currentTemp {
+    @apply text-2xl font-medium my-5;
+  }
+
+  &--feelsLike {
+    @apply text-2xl font-medium mb-5;
+  }
+
+  &--avg {
+    @apply text-2xl font-medium mb-5;
+  }
+
+  &__currentDetails {
+    @apply w-1/2 h-auto mx-auto my-5 rounded-lg border border-black shadow-lg;
+    div {
+      @apply flex justify-between items-center p-5;
+    }
+
+    &:hover {
+      border-color: rgb(247, 84, 84);
+      transition: all 0.3s ease-in-out;
+
+      @apply shadow-xl bg-[#214568];
+    }
+  }
+}

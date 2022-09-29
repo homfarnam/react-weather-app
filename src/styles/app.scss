@@ -1,0 +1,17 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background: linear-gradient(90deg, #1e3246 0%, #203448 50%, #0f2841 100%),
+    linear-gradient(90deg, #1e3246 0%, #0f2841 50%, #0f2841 100%);
+}
+
+.app {
+  &__searchInput {
+    @apply p-2 rounded-xl border-black border-2 first-letter:uppercase;
+  }
+}
