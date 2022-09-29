@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react"
+import { WeatherData } from "./components"
 
-function App() {
+const App = () => {
+  const [city, setCity] = useState<string>("")
+  const [showData, setShowData] = useState(false)
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCity(e.target.value)
+    setShowData(false)
+  }
+
+  const fetchWeather = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (city) {
+      setShowData(true)
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <form onSubmit={fetchWeather}>
+          <input
+            type="text"
+            placeholder="Search City"
+            value={city}
+            onChange={handleSearch}
+            className="app__searchInput"
+            id="search"
+            data-testid="search"
+          />
+        </form>
+        {showData && <WeatherData city={city} />}
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
